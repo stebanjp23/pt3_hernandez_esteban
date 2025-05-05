@@ -14,6 +14,7 @@ class Teams {
       id: json['team_id'] as int,
       name: json['team_name'] as String,
       abreviation: json['team_abbreviation'] as String,
+      
     );
   }
 }

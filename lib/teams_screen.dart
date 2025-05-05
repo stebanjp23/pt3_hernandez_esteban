@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:pt3_hernandez_esteban/sports.dart';
+import 'sports.dart';
 import 'dart:convert';
 import 'teams.dart';
+import 'info_screen.dart';
 
 
 class Teams_Screen extends StatefulWidget{
@@ -54,6 +55,12 @@ class _Estado extends State<Teams_Screen> {
             return ListTile(
               leading: Image.network("https://www.vidalibarraquer.net/android/sports/${widget.sportName}/${e.abreviation.toLowerCase()}.png"),
               title: Text(e.name),
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => info(team: e, sportName: widget.sportName,),)
+                  );
+              },
             );
           })
         
